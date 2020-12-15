@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RatingBar">
+        <attr name="normal" format="reference" />
+        <attr name="select" format="reference" />
+        <attr name="nums" format="integer" />
+        <attr name="space" format="integer" />
+    </declare-styleable>
+</resources>
