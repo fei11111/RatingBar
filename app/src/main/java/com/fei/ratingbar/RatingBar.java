@@ -6,7 +6,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
@@ -92,9 +91,11 @@ public class RatingBar extends View {
                 if (x <= 0) return true;
 
                 if (x > getWidth()) return true;
-
-                mProgress = (int) (x / (mSingleWidth + mSpace) + 1);
-                invalidate();
+                int progress = (int) (x / (mSingleWidth + mSpace) + 1);
+                if (progress != mProgress) {
+                    mProgress = progress;
+                    invalidate();
+                }
                 break;
         }
 
